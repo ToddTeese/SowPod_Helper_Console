@@ -13,15 +13,34 @@ namespace SowPod_Helper_Console
             while (helperRunning) {
                 PrintHelpText();
                 ConsoleKeyInfo keyPressed = Console.ReadKey(true);
-                Console.WriteLine(keyPressed.KeyChar);
-                if (keyPressed.KeyChar == 'q') {
-                    helperRunning = false;
+                switch (keyPressed.KeyChar) {
+                    case '1':
+                        ValidateAWord();
+                        break;
+                    case '2':
+                        FindAWord();
+                        break;
+                    case 'q':
+                        helperRunning = false; 
+                        break;
+                    default:
+                        break;
                 }
             }
             Console.WriteLine("Thanks for Using the SowPod Helper");
             Console.WriteLine("Enjoy the rest of your day");
             Console.ReadKey();
 
+        }
+
+        static void ValidateAWord() {
+            Console.WriteLine("Validate a Word");
+            Console.ReadKey();
+        }
+
+        static void FindAWord() {
+            Console.WriteLine("Find a Word");
+            Console.ReadKey();
         }
 
         static void PrintHelpText() {
